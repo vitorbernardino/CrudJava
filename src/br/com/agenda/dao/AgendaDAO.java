@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 public class AgendaDAO {
 
     public void save(Contato contato){
-        String sql = "insert into contatos (nome, idade, dataCadastro ) values (?,?,?)";
+        String sql = "INSERT INTO contatos (nome, idade, dataCadastro ) values (?,?,?)";
 
         Connection conn = null;
         PreparedStatement pstm = null;
@@ -26,6 +26,7 @@ public class AgendaDAO {
             pstm.execute();
         }catch (Exception e){
             e.printStackTrace();
+            System.out.println("erro");
         }finally {
             try {
                 if(pstm != null){
